@@ -1,0 +1,16 @@
+{
+  "source": "Unity",
+  "applications": [
+    {
+      "app_key": "application.generated.unity.newmultiplayer.exe",
+      "launch_type": "url",
+      "url": "steam://launch/",
+      "action_manifest_path": "E:\\Users\\Nur Amiera\\Desktop\\GitHub\\Teleport-\\Module 1 - Teleport Testing\\actions.json",
+      "strings": {
+        "en_us": {
+          "name": "Module 1 - Teleport Testing [Testing]"
+        }
+      }
+    }
+  ]
+}
