@@ -17,16 +17,7 @@ public class MyPlayer : MonoBehaviourPunCallbacks ,  IPunObservable
     Vector3 latestPos;
     Quaternion latestRot;
     private PhotonView PV;
-  
-   
 
-    //public static GameObject LocalPlayerInstance;
-   /* void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, UnityEngine.SceneManagement.LoadSceneMode loadingMode)
-    {
-        this.CalledOnLevelWasLoaded(scene.buildIndex);
-    }*/
-
-    
     #region MonoBehaviour CallBacks
 
     // Start is called before the first frame update
@@ -38,12 +29,7 @@ public class MyPlayer : MonoBehaviourPunCallbacks ,  IPunObservable
         {
             photonView.RPC("Pickup", RpcTarget.AllBuffered);
             photonView.RPC("Drop", RpcTarget.AllBuffered);
-            photonView.RPC("TryTeleport", RpcTarget.AllBuffered);
-
-
-            // MyPlayer.LocalPlayerInstance = this.gameObject;
-            //DontDestroyOnLoad(this.gameObject);
-
+            photonView.RPC("TryTeleport", RpcTarget.AllBuffered);            
         }
         else
         {
@@ -61,23 +47,7 @@ public class MyPlayer : MonoBehaviourPunCallbacks ,  IPunObservable
         }
 
     }
-
- 
-    
-    
-   
-    #endregion
-
-   /* void CalledOnLevelWasLoaded(int level)
-    {
-        // check if we are outside the Arena and if it's the case, spawn around the center of the arena in a safe zone
-        if (!Physics.Raycast(transform.position, -Vector3.up, 5f))
-        {
-            transform.position = new Vector3(0f, 5f, 0f);
-        }
-
-    }*/
-
+    #endregion 
 
     #region IPunObservable implementation
 
@@ -96,8 +66,7 @@ public class MyPlayer : MonoBehaviourPunCallbacks ,  IPunObservable
             latestRot = (Quaternion)stream.ReceiveNext();
         }
     }
-
-
+    
     void Update()
     {
         if (!photonView.IsMine)
