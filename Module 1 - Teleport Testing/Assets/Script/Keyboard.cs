@@ -5,12 +5,19 @@ using UnityEngine.UI;
 using Valve.VR.Extras;
 using Valve.VR.InteractionSystem;
 
-public class Keyboard: MonoBehaviour
+public class Keyboard : MonoBehaviour
 {
 
     public InputField TextField;
+    public InputField JoinRoom;
+    public InputField PlayerName;
+
     public SteamVR_LaserPointer laserPointer;
     string alphabet;
+
+    public bool Room;
+    public bool Join;
+    public bool PlayerNameCheck;
 
     void Awake()
     {
@@ -219,203 +226,804 @@ public class Keyboard: MonoBehaviour
             Debug.Log("0 was clicked");
             Zero();
         }
+
+        if (e.target.name == "RoomNameInput")
+        {
+            TextField.ActivateInputField();
+            JoinRoom.DeactivateInputField();
+
+            if (TextField.isActiveAndEnabled == true)
+            {
+                Debug.Log("Join Room is deactive  " + JoinRoom.isActiveAndEnabled);
+                Debug.Log("Room Name Input Activated" + TextField.isActiveAndEnabled);
+                Debug.Log("Room Name is enable" + (TextField.enabled == true));
+                Room = true;
+                Join = false;
+            }
+        }
+        else if (e.target.name == "JoinRoomInput")
+        {
+            JoinRoom.ActivateInputField();
+            TextField.DeactivateInputField();
+
+            if (JoinRoom.isActiveAndEnabled == true)
+            {
+                Debug.Log("Room Name is deactive = " + TextField.isActiveAndEnabled);
+                Debug.Log("Join Room Input Activated" + JoinRoom.isActiveAndEnabled);
+
+                Room = false;
+                Join = true;
+            }
+        }
+        else if (e.target.name == "PlayerName")
+        {
+            PlayerName.ActivateInputField();
+
+            if (PlayerName.isActiveAndEnabled == true)
+            {
+                Debug.Log("Player Name Activated!");
+
+                PlayerNameCheck = true;
+                Room = false;
+                Join = false;
+            }
+        }
     }
+
 
     public void A()
     {
-        TextField.text = TextField.text + "A";
+
+        if (Room == true && Join == false && PlayerNameCheck == false)
+        {
+            TextField.text = TextField.text + "A";
+            TextField.caretPosition = (TextField.text.Length) + 2;
+
+        }
+        else if (Join == true && Room == false && PlayerNameCheck == false)
+        {
+            JoinRoom.text = JoinRoom.text + "A";
+            JoinRoom.caretPosition = (JoinRoom.text.Length) + 2;
+        }
+        else if (PlayerNameCheck == true && Room == false && Join == false)
+        {
+            PlayerName.text = PlayerName.text + "A";
+            PlayerName.caretPosition = (PlayerName.text.Length) + 2;
+        }
     }
 
     public void B()
     {
-        TextField.text = TextField.text + "B";
+        if (Room == true && Join == false && PlayerNameCheck == false)
+        {
+            TextField.text = TextField.text + "B";
+            TextField.caretPosition = (TextField.text.Length) + 2;
+        }
+        else if (Join == true && Room == false && PlayerNameCheck == false)
+        {
+            JoinRoom.text = JoinRoom.text + "B";
+            JoinRoom.caretPosition = (JoinRoom.text.Length) + 2;
+        }
+        else if (PlayerNameCheck == true && Room == false && Join == false)
+        {
+            PlayerName.text = PlayerName.text + "B";
+            PlayerName.caretPosition = (PlayerName.text.Length) + 2;
+        }
     }
 
     public void C()
     {
-        TextField.text = TextField.text + "C";
+        if (Room == true && Join == false && PlayerNameCheck == false)
+        {
+            TextField.text = TextField.text + "C";
+            TextField.caretPosition = (TextField.text.Length) + 2;
+        }
+        else if (Join == true && Room == false && PlayerNameCheck == false)
+        {
+            JoinRoom.text = JoinRoom.text + "C";
+            JoinRoom.caretPosition = (JoinRoom.text.Length) + 2;
+        }
+        else if (PlayerNameCheck == true && Room == false && Join == false)
+        {
+            PlayerName.text = PlayerName.text + "C";
+            PlayerName.caretPosition = (PlayerName.text.Length) + 2;
+        }
     }
 
     public void D()
     {
-        TextField.text = TextField.text + "D";
+        if (Room == true && Join == false && PlayerNameCheck == false)
+        {
+            TextField.text = TextField.text + "D";
+            TextField.caretPosition = (TextField.text.Length) + 2;
+        }
+        else if (Join == true && Room == false && PlayerNameCheck == false)
+        {
+            JoinRoom.text = JoinRoom.text + "D";
+            JoinRoom.caretPosition = (JoinRoom.text.Length) + 2;
+        }
+        else if (PlayerNameCheck == true && Room == false && Join == false)
+        {
+            PlayerName.text = PlayerName.text + "D";
+            PlayerName.caretPosition = (PlayerName.text.Length) + 2;
+        }
     }
 
     public void E()
     {
-        TextField.text = TextField.text + "E";
+        if (Room == true && Join == false && PlayerNameCheck == false)
+        {
+            TextField.text = TextField.text + "E";
+            TextField.caretPosition = (TextField.text.Length) + 2;
+        }
+        else if (Join == true && Room == false && PlayerNameCheck == false)
+        {
+            JoinRoom.text = JoinRoom.text + "E";
+            JoinRoom.caretPosition = (JoinRoom.text.Length) + 2;
+        }
+        else if (PlayerNameCheck == true && Room == false && Join == false)
+        {
+            PlayerName.text = PlayerName.text + "E";
+            PlayerName.caretPosition = (PlayerName.text.Length) + 2;
+        }
     }
 
     public void F()
     {
-        TextField.text = TextField.text + "F";
+        if (Room == true && Join == false && PlayerNameCheck == false)
+        {
+            TextField.text = TextField.text + "F";
+            TextField.caretPosition = (TextField.text.Length) + 2;
+        }
+        else if (Join == true && Room == false && PlayerNameCheck == false)
+        {
+            JoinRoom.text = JoinRoom.text + "F";
+            JoinRoom.caretPosition = (JoinRoom.text.Length) + 2;
+        }
+        else if (PlayerNameCheck == true && Room == false && Join == false)
+        {
+            PlayerName.text = PlayerName.text + "F";
+            PlayerName.caretPosition = (PlayerName.text.Length) + 2;
+        }
     }
 
     public void G()
     {
-        TextField.text = TextField.text + "G";
+        if (Room == true && Join == false && PlayerNameCheck == false)
+        {
+            TextField.text = TextField.text + "G";
+            TextField.caretPosition = (TextField.text.Length) + 2;
+        }
+        else if (Join == true && Room == false && PlayerNameCheck == false)
+        {
+            JoinRoom.text = JoinRoom.text + "G";
+            JoinRoom.caretPosition = (JoinRoom.text.Length) + 2;
+        }
+        else if (PlayerNameCheck == true && Room == false && Join == false)
+        {
+            PlayerName.text = PlayerName.text + "G";
+            PlayerName.caretPosition = (PlayerName.text.Length) + 2;
+        }
     }
 
     public void H()
     {
-        TextField.text = TextField.text + "H";
+        if (Room == true && Join == false && PlayerNameCheck == false)
+        {
+            TextField.text = TextField.text + "H";
+            TextField.caretPosition = (TextField.text.Length) + 2;
+        }
+        else if (Join == true && Room == false && PlayerNameCheck == false)
+        {
+            JoinRoom.text = JoinRoom.text + "H";
+            JoinRoom.caretPosition = (JoinRoom.text.Length) + 2;
+        }
+        else if (PlayerNameCheck == true && Room == false && Join == false)
+        {
+            PlayerName.text = PlayerName.text + "H";
+            PlayerName.caretPosition = (PlayerName.text.Length) + 2;
+        }
     }
 
     public void I()
     {
-        TextField.text = TextField.text + "I";
+        if (Room == true && Join == false && PlayerNameCheck == false)
+        {
+            TextField.text = TextField.text + "I";
+            TextField.caretPosition = (TextField.text.Length) + 2;
+        }
+        else if (Join == true && Room == false && PlayerNameCheck == false)
+        {
+            JoinRoom.text = JoinRoom.text + "I";
+            JoinRoom.caretPosition = (JoinRoom.text.Length) + 2;
+        }
+        else if (PlayerNameCheck == true && Room == false && Join == false)
+        {
+            PlayerName.text = PlayerName.text + "I";
+            PlayerName.caretPosition = (PlayerName.text.Length) + 2;
+        }
     }
 
     public void J()
     {
-        TextField.text = TextField.text + "J";
+        if (Room == true && Join == false && PlayerNameCheck == false)
+        {
+            TextField.text = TextField.text + "J";
+            TextField.caretPosition = (TextField.text.Length) + 2;
+        }
+        else if (Join == true && Room == false && PlayerNameCheck == false)
+        {
+            JoinRoom.text = JoinRoom.text + "J";
+            JoinRoom.caretPosition = (JoinRoom.text.Length) + 2;
+        }
+        else if (PlayerNameCheck == true && Room == false && Join == false)
+        {
+            PlayerName.text = PlayerName.text + "J";
+            PlayerName.caretPosition = (PlayerName.text.Length) + 2;
+        }
     }
 
     public void K()
     {
-        TextField.text = TextField.text + "K";
+        if (Room == true && Join == false && PlayerNameCheck == false)
+        {
+            TextField.text = TextField.text + "K";
+            TextField.caretPosition = (TextField.text.Length) + 2;
+        }
+        else if (Join == true && Room == false && PlayerNameCheck == false)
+        {
+            JoinRoom.text = JoinRoom.text + "K";
+            JoinRoom.caretPosition = (JoinRoom.text.Length) + 2;
+        }
+        else if (PlayerNameCheck == true && Room == false && Join == false)
+        {
+            PlayerName.text = PlayerName.text + "K";
+            PlayerName.caretPosition = (PlayerName.text.Length) + 2;
+        }
     }
 
     public void L()
     {
-        TextField.text = TextField.text + "L";
+        if (Room == true && Join == false && PlayerNameCheck == false)
+        {
+            TextField.text = TextField.text + "L";
+            TextField.caretPosition = (TextField.text.Length) + 2;
+        }
+        else if (Join == true && Room == false && PlayerNameCheck == false)
+        {
+            JoinRoom.text = JoinRoom.text + "L";
+            JoinRoom.caretPosition = (JoinRoom.text.Length) + 2;
+        }
+        else if (PlayerNameCheck == true && Room == false && Join == false)
+        {
+            PlayerName.text = PlayerName.text + "L";
+            PlayerName.caretPosition = (PlayerName.text.Length) + 2;
+        }
     }
 
     public void M()
     {
-        TextField.text = TextField.text + "M";
-
+        if (Room == true && Join == false && PlayerNameCheck == false)
+        {
+            TextField.text = TextField.text + "M";
+            TextField.caretPosition = (TextField.text.Length) + 2;
+        }
+        else if (Join == true && Room == false && PlayerNameCheck == false)
+        {
+            JoinRoom.text = JoinRoom.text + "M";
+            JoinRoom.caretPosition = (JoinRoom.text.Length) + 2;
+        }
+        else if (PlayerNameCheck == true && Room == false && Join == false)
+        {
+            PlayerName.text = PlayerName.text + "M";
+            PlayerName.caretPosition = (PlayerName.text.Length) + 2;
+        }
     }
 
     public void N()
     {
-        TextField.text = TextField.text + "N";
+        if (Room == true && Join == false && PlayerNameCheck == false)
+        {
+            TextField.text = TextField.text + "N";
+            TextField.caretPosition = (TextField.text.Length) + 2;
+        }
+        else if (Join == true && Room == false && PlayerNameCheck == false)
+        {
+            JoinRoom.text = JoinRoom.text + "N";
+            JoinRoom.caretPosition = (JoinRoom.text.Length) + 2;
+        }
+        else if (PlayerNameCheck == true && Room == false && Join == false)
+        {
+            PlayerName.text = PlayerName.text + "N";
+            PlayerName.caretPosition = (PlayerName.text.Length) + 2;
+        }
     }
 
     public void O()
     {
-        TextField.text = TextField.text + "Q";
+        if (Room == true && Join == false && PlayerNameCheck == false)
+        {
+            TextField.text = TextField.text + "O";
+            TextField.caretPosition = (TextField.text.Length) + 2;
+        }
+        else if (Join == true && Room == false && PlayerNameCheck == false)
+        {
+            JoinRoom.text = JoinRoom.text + "O";
+            JoinRoom.caretPosition = (JoinRoom.text.Length) + 2;
+        }
+        else if (PlayerNameCheck == true && Room == false && Join == false)
+        {
+            PlayerName.text = PlayerName.text + "O";
+            PlayerName.caretPosition = (PlayerName.text.Length) + 2;
+        }
     }
 
     public void P()
     {
-        TextField.text = TextField.text + "P";
+        if (Room == true && Join == false && PlayerNameCheck == false)
+        {
+            TextField.text = TextField.text + "P";
+            TextField.caretPosition = (TextField.text.Length) + 2;
+        }
+        else if (Join == true && Room == false && PlayerNameCheck == false)
+        {
+            JoinRoom.text = JoinRoom.text + "P";
+            JoinRoom.caretPosition = (JoinRoom.text.Length) + 2;
+        }
+        else if (PlayerNameCheck == true && Room == false && Join == false)
+        {
+            PlayerName.text = PlayerName.text + "P";
+            PlayerName.caretPosition = (PlayerName.text.Length) + 2;
+        }
     }
 
     public void Q()
     {
-        TextField.text = TextField.text + "Q";
+        if (Room == true && Join == false && PlayerNameCheck == false)
+        {
+            TextField.text = TextField.text + "Q";
+            TextField.caretPosition = (TextField.text.Length) + 2;
+        }
+        else if (Join == true && Room == false && PlayerNameCheck == false)
+        {
+            JoinRoom.text = JoinRoom.text + "Q";
+            JoinRoom.caretPosition = (JoinRoom.text.Length) + 2;
+        }
+        else if (PlayerNameCheck == true && Room == false && Join == false)
+        {
+            PlayerName.text = PlayerName.text + "Q";
+            PlayerName.caretPosition = (PlayerName.text.Length) + 2;
+        }
     }
 
     public void R()
     {
-        TextField.text = TextField.text + "R";
+        if (Room == true && Join == false && PlayerNameCheck == false)
+        {
+            TextField.text = TextField.text + "R";
+            TextField.caretPosition = (TextField.text.Length) + 2;
+        }
+        else if (Join == true && Room == false && PlayerNameCheck == false)
+        {
+            JoinRoom.text = JoinRoom.text + "R";
+            JoinRoom.caretPosition = (JoinRoom.text.Length) + 2;
+        }
+        else if (PlayerNameCheck == true && Room == false && Join == false)
+        {
+            PlayerName.text = PlayerName.text + "R";
+            PlayerName.caretPosition = (PlayerName.text.Length) + 2;
+        }
     }
 
     public void S()
     {
-        TextField.text = TextField.text + "S";
+        if (Room == true && Join == false && PlayerNameCheck == false)
+        {
+            TextField.text = TextField.text + "S";
+            TextField.caretPosition = (TextField.text.Length) + 2;
+        }
+        else if (Join == true && Room == false && PlayerNameCheck == false)
+        {
+            JoinRoom.text = JoinRoom.text + "S";
+            JoinRoom.caretPosition = (JoinRoom.text.Length) + 2;
+        }
+        else if (PlayerNameCheck == true && Room == false && Join == false)
+        {
+            PlayerName.text = PlayerName.text + "S";
+            PlayerName.caretPosition = (PlayerName.text.Length) + 2;
+        }
     }
 
     public void T()
     {
-        TextField.text = TextField.text + "T";
+        if (Room == true && Join == false && PlayerNameCheck == false)
+        {
+            TextField.text = TextField.text + "T";
+            TextField.caretPosition = (TextField.text.Length) + 2;
+        }
+        else if (Join == true && Room == false && PlayerNameCheck == false)
+        {
+            JoinRoom.text = JoinRoom.text + "T";
+            JoinRoom.caretPosition = (JoinRoom.text.Length) + 2;
+        }
+        else if (PlayerNameCheck == true && Room == false && Join == false)
+        {
+            PlayerName.text = PlayerName.text + "T";
+            PlayerName.caretPosition = (PlayerName.text.Length) + 2;
+        }
     }
 
     public void U()
     {
-        TextField.text = TextField.text + "U";
+        if (Room == true && Join == false && PlayerNameCheck == false)
+        {
+            TextField.text = TextField.text + "U";
+            TextField.caretPosition = (TextField.text.Length) + 2;
+        }
+        else if (Join == true && Room == false && PlayerNameCheck == false)
+        {
+            JoinRoom.text = JoinRoom.text + "U";
+            JoinRoom.caretPosition = (JoinRoom.text.Length) + 2;
+        }
+        else if (PlayerNameCheck == true && Room == false && Join == false)
+        {
+            PlayerName.text = PlayerName.text + "U";
+            PlayerName.caretPosition = (PlayerName.text.Length) + 2;
+        }
     }
 
     public void V()
     {
-        TextField.text = TextField.text + "V";
+        if (Room == true && Join == false && PlayerNameCheck == false)
+        {
+            TextField.text = TextField.text + "V";
+            TextField.caretPosition = (TextField.text.Length) + 2;
+        }
+        else if (Join == true && Room == false && PlayerNameCheck == false)
+        {
+            JoinRoom.text = JoinRoom.text + "V";
+            JoinRoom.caretPosition = (JoinRoom.text.Length) + 2;
+        }
+        else if (PlayerNameCheck == true && Room == false && Join == false)
+        {
+            PlayerName.text = PlayerName.text + "V";
+            PlayerName.caretPosition = (PlayerName.text.Length) + 2;
+        }
     }
 
     public void W()
     {
-        TextField.text = TextField.text + "W";
+        if (Room == true && Join == false && PlayerNameCheck == false)
+        {
+            TextField.text = TextField.text + "W";
+            TextField.caretPosition = (TextField.text.Length) + 2;
+        }
+        else if (Join == true && Room == false && PlayerNameCheck == false)
+        {
+            JoinRoom.text = JoinRoom.text + "W";
+            JoinRoom.caretPosition = (JoinRoom.text.Length) + 2;
+        }
+        else if (PlayerNameCheck == true && Room == false && Join == false)
+        {
+            PlayerName.text = PlayerName.text + "W";
+            PlayerName.caretPosition = (PlayerName.text.Length) + 2;
+        }
     }
 
     public void X()
     {
-        TextField.text = TextField.text + "X";
+        if (Room == true && Join == false && PlayerNameCheck == false)
+        {
+            TextField.text = TextField.text + "X";
+            TextField.caretPosition = (TextField.text.Length) + 2;
+        }
+        else if (Join == true && Room == false && PlayerNameCheck == false)
+        {
+            JoinRoom.text = JoinRoom.text + "X";
+            JoinRoom.caretPosition = (JoinRoom.text.Length) + 2;
+        }
+        else if (PlayerNameCheck == true && Room == false && Join == false)
+        {
+            PlayerName.text = PlayerName.text + "X";
+            PlayerName.caretPosition = (PlayerName.text.Length) + 2;
+        }
     }
 
     public void Y()
     {
-        TextField.text = TextField.text + "Y";
+        if (Room == true && Join == false && PlayerNameCheck == false)
+        {
+            TextField.text = TextField.text + "Y";
+            TextField.caretPosition = (TextField.text.Length) + 2;
+        }
+        else if (Join == true && Room == false && PlayerNameCheck == false)
+        {
+            JoinRoom.text = JoinRoom.text + "Y";
+            JoinRoom.caretPosition = (JoinRoom.text.Length) + 2;
+        }
+        else if (PlayerNameCheck == true && Room == false && Join == false)
+        {
+            PlayerName.text = PlayerName.text + "Y";
+            PlayerName.caretPosition = (PlayerName.text.Length) + 2;
+        }
     }
 
     public void Z()
     {
-        TextField.text = TextField.text + "Z";
+        if (Room == true && Join == false && PlayerNameCheck == false)
+        {
+            TextField.text = TextField.text + "Z";
+            TextField.caretPosition = (TextField.text.Length) + 2;
+        }
+        else if (Join == true && Room == false && PlayerNameCheck == false)
+        {
+            JoinRoom.text = JoinRoom.text + "Z";
+            JoinRoom.caretPosition = (JoinRoom.text.Length) + 2;
+        }
+        else if (PlayerNameCheck == true && Room == false && Join == false)
+        {
+            PlayerName.text = PlayerName.text + "Z";
+            PlayerName.caretPosition = (PlayerName.text.Length) + 2;
+        }
     }
 
     public void FullStop()
     {
-        TextField.text = TextField.text + ".";
+        if (Room == true && Join == false && PlayerNameCheck == false)
+        {
+            TextField.text = TextField.text + ".";
+            TextField.caretPosition = (TextField.text.Length) + 2;
+        }
+        else if (Join == true && Room == false && PlayerNameCheck == false)
+        {
+            JoinRoom.text = JoinRoom.text + ".";
+            JoinRoom.caretPosition = (JoinRoom.text.Length) + 2;
+        }
+        else if (PlayerNameCheck == true && Room == false && Join == false)
+        {
+            PlayerName.text = PlayerName.text + ".";
+            PlayerName.caretPosition = (PlayerName.text.Length) + 2;
+        }
     }
 
     public void Coma()
     {
-        TextField.text = TextField.text + ",";
+        if (Room == true && Join == false && PlayerNameCheck == false)
+        {
+            TextField.text = TextField.text + ",";
+            TextField.caretPosition = (TextField.text.Length) + 2;
+        }
+        else if (Join == true && Room == false && PlayerNameCheck == false)
+        {
+            JoinRoom.text = JoinRoom.text + ",";
+            JoinRoom.caretPosition = (JoinRoom.text.Length) + 2;
+        }
+        else if (PlayerNameCheck == true && Room == false && Join == false)
+        {
+            PlayerName.text = PlayerName.text + ",";
+            PlayerName.caretPosition = (PlayerName.text.Length) + 2;
+        }
     }
 
     public void BackSpace()
     {
+        if (Room == true && Join == false && PlayerNameCheck == false)
+        {
+            if (TextField.text.Length > 0) TextField.text = TextField.text.Remove(TextField.text.Length - 1, 1);
+        }
+        else if (Join == true && Room == false && PlayerNameCheck == false)
+        {
+            if (JoinRoom.text.Length > 0) JoinRoom.text = JoinRoom.text.Remove(JoinRoom.text.Length - 1, 1);
+        }
+        else if (PlayerNameCheck == true && Room == false && Join == false)
+        {
+            if (PlayerName.text.Length > 0) PlayerName.text = PlayerName.text.Remove(PlayerName.text.Length - 1, 1);
 
-        if (TextField.text.Length > 0) TextField.text = TextField.text.Remove(TextField.text.Length - 1);
-
+        }
     }
 
     public void Space()
     {
-        TextField.text = TextField.text + " ";
+        if (Room == true && Join == false && PlayerNameCheck == false)
+        {
+            TextField.text = TextField.text + " ";
+            TextField.caretPosition = (TextField.text.Length) + 2;
+        }
+        else if (Join == true && Room == false && PlayerNameCheck == false)
+        {
+            JoinRoom.text = JoinRoom.text + " ";
+            JoinRoom.caretPosition = (JoinRoom.text.Length) + 2;
+        }
+        else if (PlayerNameCheck == true && Room == false && Join == false)
+        {
+            PlayerName.text = PlayerName.text + " ";
+            PlayerName.caretPosition = (PlayerName.text.Length) + 2;
+        }
     }
 
     public void One()
     {
-        TextField.text = TextField.text + "1";
+        if (Room == true && Join == false && PlayerNameCheck == false)
+        {
+            TextField.text = TextField.text + "1";
+            TextField.caretPosition = (TextField.text.Length) + 2;
+        }
+        else if (Join == true && Room == false && PlayerNameCheck == false)
+        {
+            JoinRoom.text = JoinRoom.text + "1";
+            JoinRoom.caretPosition = (JoinRoom.text.Length) + 2;
+        }
+        else if (PlayerNameCheck == true && Room == false && Join == false)
+        {
+            PlayerName.text = PlayerName.text + "1";
+            PlayerName.caretPosition = (PlayerName.text.Length) + 2;
+        }
     }
 
     public void Two()
     {
-        TextField.text = TextField.text + "2";
+        if (Room == true && Join == false && PlayerNameCheck == false)
+        {
+            TextField.text = TextField.text + "2";
+            TextField.caretPosition = (TextField.text.Length) + 2;
+        }
+        else if (Join == true && Room == false && PlayerNameCheck == false)
+        {
+            JoinRoom.text = JoinRoom.text + "2";
+            JoinRoom.caretPosition = (JoinRoom.text.Length) + 2;
+        }
+        else if (PlayerNameCheck == true && Room == false && Join == false)
+        {
+            PlayerName.text = PlayerName.text + "2";
+            PlayerName.caretPosition = (PlayerName.text.Length) + 2;
+        }
     }
 
     public void Three()
     {
-        TextField.text = TextField.text + "3";
+        if (Room == true && Join == false && PlayerNameCheck == false)
+        {
+            TextField.text = TextField.text + "3";
+            TextField.caretPosition = (TextField.text.Length) + 2;
+        }
+        else if (Join == true && Room == false && PlayerNameCheck == false)
+        {
+            JoinRoom.text = JoinRoom.text + "3";
+            JoinRoom.caretPosition = (JoinRoom.text.Length) + 2;
+        }
+        else if (PlayerNameCheck == true && Room == false && Join == false)
+        {
+            PlayerName.text = PlayerName.text + "3";
+            PlayerName.caretPosition = (PlayerName.text.Length) + 2;
+        }
     }
     public void Four()
     {
-        TextField.text = TextField.text + "4";
+        if (Room == true && Join == false && PlayerNameCheck == false)
+        {
+            TextField.text = TextField.text + "4";
+            TextField.caretPosition = (TextField.text.Length) + 2;
+
+        }
+        else if (Join == true && Room == false && PlayerNameCheck == false)
+        {
+            JoinRoom.text = JoinRoom.text + "4";
+            JoinRoom.caretPosition = (JoinRoom.text.Length) + 2;
+        }
+        else if (PlayerNameCheck == true && Room == false && Join == false)
+        {
+            PlayerName.text = PlayerName.text + "4";
+            PlayerName.caretPosition = (PlayerName.text.Length) + 2;
+        }
     }
     public void Five()
     {
-        TextField.text = TextField.text + "5";
+        if (Room == true && Join == false && PlayerNameCheck == false)
+        {
+            TextField.text = TextField.text + "5";
+            TextField.caretPosition = (TextField.text.Length) + 2;
+        }
+        else if (Join == true && Room == false && PlayerNameCheck == false)
+        {
+            JoinRoom.text = JoinRoom.text + "5";
+            JoinRoom.caretPosition = (JoinRoom.text.Length) + 2;
+        }
+        else if (PlayerNameCheck == true && Room == false && Join == false)
+        {
+            PlayerName.text = PlayerName.text + "5";
+            PlayerName.caretPosition = (PlayerName.text.Length) + 2;
+        }
     }
     public void Six()
     {
-        TextField.text = TextField.text + "6";
+        if (Room == true && Join == false && PlayerNameCheck == false)
+        {
+            TextField.text = TextField.text + "6";
+            TextField.caretPosition = (TextField.text.Length) + 2;
+        }
+        else if (Join == true && Room == false && PlayerNameCheck == false)
+        {
+            JoinRoom.text = JoinRoom.text + "6";
+            JoinRoom.caretPosition = (JoinRoom.text.Length) + 2;
+        }
+        else if (PlayerNameCheck == true && Room == false && Join == false)
+        {
+            PlayerName.text = PlayerName.text + "6";
+            PlayerName.caretPosition = (PlayerName.text.Length) + 2;
+        }
 
     }
     public void Seven()
     {
-        TextField.text = TextField.text + "7";
+        if (Room == true && Join == false && PlayerNameCheck == false)
+        {
+            TextField.text = TextField.text + "7";
+            TextField.caretPosition = (TextField.text.Length) + 2;
+        }
+        else if (Join == true && Room == false && PlayerNameCheck == false)
+        {
+            JoinRoom.text = JoinRoom.text + "7";
+            JoinRoom.caretPosition = (JoinRoom.text.Length) + 2;
+        }
+        else if (PlayerNameCheck == true && Room == false && Join == false)
+        {
+            PlayerName.text = PlayerName.text + "7";
+            PlayerName.caretPosition = (PlayerName.text.Length) + 2;
+        }
     }
     public void Eight()
     {
-        TextField.text = TextField.text + "8";
+        if (Room == true && Join == false && PlayerNameCheck == false)
+        {
+            TextField.text = TextField.text + "8";
+            TextField.caretPosition = (TextField.text.Length) + 2;
+        }
+        else if (Join == true && Room == false && PlayerNameCheck == false)
+        {
+            JoinRoom.text = JoinRoom.text + "8";
+            JoinRoom.caretPosition = (JoinRoom.text.Length) + 2;
+        }
+        else if (PlayerNameCheck == true && Room == false && Join == false)
+        {
+            PlayerName.text = PlayerName.text + "8";
+            PlayerName.caretPosition = (PlayerName.text.Length) + 2;
+        }
     }
     public void Nine()
     {
-        TextField.text = TextField.text + "9";
+        if (Room == true && Join == false && PlayerNameCheck == false)
+        {
+            TextField.text = TextField.text + "9";
+            TextField.caretPosition = (TextField.text.Length) + 2;
+        }
+        else if (Join == true && Room == false && PlayerNameCheck == false)
+        {
+            JoinRoom.text = JoinRoom.text + "9";
+            JoinRoom.caretPosition = (JoinRoom.text.Length) + 2;
+        }
+        else if (PlayerNameCheck == true && Room == false && Join == false)
+        {
+            PlayerName.text = PlayerName.text + "9";
+            PlayerName.caretPosition = (PlayerName.text.Length) + 2;
+        }
     }
     public void Zero()
     {
-        TextField.text = TextField.text + "0";
+        if (Room == true && Join == false && PlayerNameCheck == false)
+        {
+            TextField.text = TextField.text + "0";
+            TextField.caretPosition = (TextField.text.Length) + 2;
+        }
+        else if (Join == true && Room == false && PlayerNameCheck == false)
+        {
+            JoinRoom.text = JoinRoom.text + "0";
+            JoinRoom.caretPosition = (JoinRoom.text.Length) + 2;
+        }
+        else if (PlayerNameCheck == true && Room == false && Join == false)
+        {
+            PlayerName.text = PlayerName.text + "0";
+            PlayerName.caretPosition = (PlayerName.text.Length) + 2;
+        }
     }
 
 }

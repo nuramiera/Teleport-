@@ -12,9 +12,12 @@ EditorBuildSettings:
     path: Assets/Scenes/SelectRoom/Rooms.unity
     guid: ae55155f26f6eb4409f60f6c9998733e
   - enabled: 1
-    path: Assets/Scenes/final.unity
+    path: Assets/Scenes/GameorModule/Module 3/final.unity
     guid: 6957a6303f2e2f24cb5eaf70030f2a49
   - enabled: 1
-    path: Assets/Scenes/Pick up cube & controller show.unity
+    path: Assets/Scenes/GameorModule/Module 1/Pick up cube & controller show.unity
     guid: d6d84ae0436f7d9428add3719f1a3b37
+  - enabled: 1
+    path: Assets/Scenes/MainScene.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects: {}
